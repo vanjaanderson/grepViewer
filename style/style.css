@@ -1,0 +1,79 @@
+body { background-color: #ccc; }
+header, footer { text-align: center; }
+h1, h2, h3 {
+	font-family: "Trebuchet MS";
+}
+h2 { 
+	text-align: center;
+	font-size: 1.8em; 
+	background-color: #333;
+	color: #fff;
+	padding: 0.25em 0;
+}
+h1 { 
+	margin: 0; 
+	font-size: 2.5em; 
+}
+a { color: #fff; }
+a:visited { color: #ccc; }
+input[type=text] { width: 180px; }
+form { display: inline-block; }
+#wrapper { 
+	max-width: 1068px; 
+	margin: 0 auto; 
+	padding: 0.5em; 
+	background-color: #fff; 
+	border-radius: 0.75em; 
+}
+#main { 
+	margin: 0.5em 1em; 
+	background-color: #333; 
+	overflow: auto;
+	min-height: 400px;
+	border-radius: 0.5em;
+}
+#view {
+    position: fixed;
+    left: 50%;
+    top: 100px;
+    background-color: rgba(255,255,255,0.8);
+    z-index: 100;
+    min-height: 268px;
+    width: 600px;
+    margin-left: -490px;
+    padding: 0px 16px;
+    border-radius: 0.25em;
+}
+nav { 
+	float: right; 
+	/*background-color: #0ff;*/
+	margin: 1.5em 0.5em;
+	width: 340px;
+}
+footer { 
+	clear: both; 
+}
+#feedback {
+	background-color: #fff;
+	padding: 1em;
+	color: #000;
+	font-size: 1.5em;
+	width: 300px;
+	height: 30px;
+	position:fixed;
+	left: 400px;
+	top: 150px;
+}
+#find, #replace { 
+	font-size: 3em; 
+	font-family: monospace;
+	margin-top: 0;
+	text-shadow: 1px 1px 2px #fff;
+}
+#find { color: maroon; }
+#replace { color: teal; }
+.big { 
+	color: red; 
+	font-size: 100px; 
+}
+.center { text-align: center; }
