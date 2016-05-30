@@ -5,5 +5,6 @@ This is a GREP Viewer for InDesign. For now you have to copy all the greps into 
 #### ToDo
 + Make request asynchronous.
 
-#### Cahngelog
+#### Changelog
++ 2016-05-30 Version 1.1
 + 2016-05-23 Version 1.0

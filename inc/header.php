@@ -29,12 +29,12 @@
             <header>
                 <h1>Viewer for InDesign GREPS</h1>
                 <?php if (!isset($_COOKIE['path'])) {
-                    echo '<form action="'.$_SERVER['PHP_SELF'].'" method="GET">
+                    echo '<form action="'.$_SERVER['PHP_SELF'].'" method="POST">
                         <label for="path">Location of your GREP directory: </label>
-                        <input type="text" name="path" id="path" placeholder="Write your directory\'s name here" />
+                        <input type="text" name="path" id="path" value="GREPAR" />
                         <input type="submit" value="Set location" />
                     </form>
-                    <form action="'.$_SERVER['PHP_SELF'].' "method="GET">
+                    <form action="'.$_SERVER['PHP_SELF'].' "method="POST">
                         <input type="hidden" name="delete_path">
                         <input type="submit" value="Delete location">
                     </form>';
