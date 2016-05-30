@@ -1,8 +1,9 @@
 <?php
+
 // scan a defined folder for files and make links of them
 function return_links_on_folder_content($folder) {
 	$content = scandir($folder);
-	// set id number for each item
+	// increment the content
 	$nr = 0;
 	// write content in a nav
 	echo '<nav>';
@@ -14,7 +15,7 @@ function return_links_on_folder_content($folder) {
 			// 
 			convert_characters_to_sv($name);
 		}
-		$nr++;
+		$_GET['nr'] = $nr++;
 	}
 	echo '</nav>';
 }
@@ -23,16 +24,19 @@ function convert_characters_to_sv($filename) {
 	$res1 = preg_replace("/Ü/", "å", $filename);
 	$res2 = preg_replace("/Ñ/", "ä", $res1);
 	$res3 = preg_replace("/î/", "ö", $res2);
-	$res4 = preg_replace("/Ò/", "±", $res3); // cleaned name
+	$res4 = preg_replace("/Ò/", "±", $res3);
+	$res5 = preg_replace("/\+/", " ", $res4); // cleaned name
 	// print link in html
 	if (isset($_COOKIE['path'])) {
-		echo '<a href="'.$_SERVER['PHP_SELF'].'?q='.$res4.'&amp;file='.$filename.'">'.$res3.'</a><br />';
+		echo '<a id="'.$_GET['nr'].'" href="'.$_SERVER['PHP_SELF'].'?id='.$res5.'&amp;file='.$filename.'">'.$res5.'</a><br />';
+	}
+	if (isset($_GET['file'])) {
+		parse_xml_file($_GET['file'] .".xml");
 	}
 }
 // parse xml and print in html
 function parse_xml_file($file) {
 	$xml = simplexml_load_file($_COOKIE['path']."/".$file);
-
 	$_COOKIE['find'] = $xml->Description->FindExpression[0]['value'];
 	$_COOKIE['replace'] = $xml->Description->ReplaceExpression[0]['value'];
 }
@@ -40,7 +44,5 @@ function parse_xml_file($file) {
 function delete_cookie() {
 	setcookie("path", "", time() - 3600);
 }
-
-parse_xml_file($_GET['file'].".xml");
 
 ?>

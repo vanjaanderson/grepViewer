@@ -1,5 +1,7 @@
 <?php
 
+// ob_start();
+
 include('inc/functions.php');
 
 include('inc/header.php');
