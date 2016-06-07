@@ -1,5 +1,6 @@
 <?php
 
+// output buffering
 // ob_start();
 
 include('inc/functions.php');

@@ -16,21 +16,12 @@ else if (!isset($_POST['path']) || ($_POST['path']=="")) {
 if (isset($_POST['delete_path'])) {
 	delete_cookie();
 }
-//
-if (!isset($_GET['id'])) {
-	$_GET['id'] = "Name of the GREP here";
-}
-// cookie variables
-if (!isset($_COOKIE['find']) && !isset($_COOKIE['replace'])) {
-	$_COOKIE['find'] = "Find pattern";
-	$_COOKIE['replace'] = "Replace with";
-}
 ?>
 
 <div id="view">
-	<h2><?=$_GET['id'];?></h2>
+	<h2>Name of GREP here</h2>
 	<h3>Find:</h3>
-	<p id="find"><?=$_COOKIE['find'];?></p>
+	<p id="find">Find pattern</p>
 	<h3>Replace:</h3>
-	<p id="replace"><?=$_COOKIE['replace'];?></p>
+	<p id="replace">Replace with</p>
 </div>

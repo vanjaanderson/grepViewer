@@ -3,14 +3,14 @@
 	Description: View InDesign GREP's in your web browser.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 	Author: Vanja Maria Anderson
-	Date: 2016-05-14
-	Version: 1.0
+	Date: 2016-05-30
+	Version: 1.1
 	Website: http://vanjaswebb.se
-	Development: https://github.com/vanjaanderson/
+	Development: https://github.com/vanjaanderson/grepViewer
 ********************************************************************************** 
 -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="vanja">
     <head>
         <meta charset="utf-8" />
         <meta name="description"    content="GREP Viewer" />
@@ -23,6 +23,8 @@
         <link rel="apple-touch-icon" type="image/png" href="apple-touch-icon.png" />
         <!-- CSS -->
         <link href="style/style.css" rel="stylesheet" />
+        <!-- Javascript -->
+        <script src="script/script.js"></script>
     </head>
     <body>
         <section id="wrapper">
