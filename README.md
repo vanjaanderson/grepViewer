@@ -7,6 +7,6 @@ This is a GREP Viewer for InDesign. For now you have to copy all the greps into 
 + Make request asynchronous – made in version 1.2.
 
 #### Changelog
-+ 2016-06-07 Version 1.2
-+ 2016-05-30 Version 1.1
-+ 2016-05-23 Version 1.0
++ 2016-06-07 Version 1.2 – ajax version
++ 2016-05-30 Version 1.1 – working version without ajax
++ 2016-05-23 Version 1.0 – not yet working version
