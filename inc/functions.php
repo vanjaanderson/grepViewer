@@ -5,7 +5,7 @@ function return_links_on_folder_content($folder) {
 	// increment the content (in case you need it)
 	$nr = 0;
 	// write content in a nav
-	echo '<nav>';
+	echo '<aside><ul>';
 	foreach ($content as $key => $value) {
 		// filter off hidden files before processing
 		if ($value != "." && $value != ".." && $value != ".DS_Store") {
@@ -16,7 +16,7 @@ function return_links_on_folder_content($folder) {
 		}
 		$_GET['nr'] = $nr++;
 	}
-	echo '</nav>';
+	echo '</ul></aside>';
 }
 // convert å, ä and ö in file names links
 function convert_characters_to_sv($filename) {
@@ -27,7 +27,7 @@ function convert_characters_to_sv($filename) {
 	// print link in html
 	parse_xml_file($filename .".xml");
 	// AJAX solution
-	echo '<a href="#" onclick="getGrep(\''.$_GET['nr'].'\',\''.$res4.'\',\''.$_COOKIE["find"].'\',\''.$_COOKIE["replace"].'\')">'.$res4.'</a><br />';
+	echo '<li><a class="grep" href="#" onclick="getGrep(\''.$_GET['nr'].'\',\''.$res4.'\',\''.$_COOKIE["find"].'\',\''.$_COOKIE["replace"].'\')">'.$res4.'</a></li>';
 }
 // parse xml and print in html
 function parse_xml_file($file) {
@@ -39,5 +39,7 @@ function parse_xml_file($file) {
 // delete cookie "path"
 function delete_cookie() {
 	setcookie("path", "", time() - 3600);
+	// redirect (refresh page)
+	header('Location: '.$_SERVER['REQUEST_URI']);
 }
 ?>

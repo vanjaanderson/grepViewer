@@ -4,11 +4,12 @@ h1, h2, h3 {
 	font-family: "Trebuchet MS";
 }
 h2 { 
-	text-align: center;
-	font-size: 1.8em; 
+	text-align: left;
+	font-size: 1.5em; 
 	background-color: #333;
 	color: #fff;
-	padding: 0.25em 0;
+	margin: 0;
+	padding: 0.25em 0.4em;
 }
 h1 { 
 	margin: 0; 
@@ -18,56 +19,71 @@ a { color: #fff; }
 a:visited { color: #ccc; }
 input[type=text] { width: 180px; }
 form { display: inline-block; }
-#wrapper { 
-	max-width: 1068px; 
-	margin: 0 auto; 
-	padding: 0.5em; 
+#wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -300px; /* half of default height 600px */
+	margin-left: -425px; /* half of width 850px */
+	max-width: 850px; 
+	padding: 12px 8px 2px 8px; 
 	background-color: #fff; 
-	border-radius: 0.75em; 
+	border-radius: 0.75em;
 }
 #main { 
-	margin: 0.5em 1em; 
+	margin: 8px 16px; 
+	padding: 16px;
 	background-color: #333; 
 	overflow: auto;
-	min-height: 400px;
+	min-height: 416px;
 	border-radius: 0.5em;
 }
 #view {
-    position: fixed;
-    left: 50%;
-    top: 100px;
     background-color: rgba(255,255,255,0.8);
     z-index: 100;
-    min-height: 268px;
-    width: 600px;
-    margin-left: -490px;
-    padding: 0px 16px;
+    min-height: 360px;
+    width: 60%;
+    padding: 16px;
     border-radius: 0.25em;
+    box-sizing: border-box;
 }
-nav { 
+#form-group {
+	text-align: right;
+	padding-right: 16px;
+}
+aside { 
 	float: right; 
-	/*background-color: #0ff;*/
-	margin: 1.5em 0.5em;
-	width: 340px;
+	width: 40%;
+	box-sizing: border-box;
+	margin-top: -16px;
+}
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+.grep {
+	display: block;
+	margin-bottom: 10px;
+	padding-left: 16px;
 }
 footer { 
 	clear: both; 
+	font: 12px/16px Verdana, sans-serif;
+}
+.bottom {
+	margin-bottom: 0;
 }
 #feedback {
-	background-color: #fff;
-	padding: 1em;
-	color: #000;
-	font-size: 1.5em;
-	width: 300px;
-	height: 30px;
-	position:fixed;
-	left: 400px;
-	top: 150px;
+	color: orange;
+	font: 1.2em Verdana, sans-serif;
+	width: 40%;
+	float: right;
 }
 #find, #replace { 
 	font-size: 3em; 
 	font-family: monospace;
-	margin-top: 0;
+	margin: 0;
+	padding: 0;
 	text-shadow: 1px 1px 2px #fff;
 }
 #find { color: maroon; }
@@ -76,4 +92,13 @@ footer {
 	color: red; 
 	font-size: 100px; 
 }
+.small {
+	color: #ccc;
+	font-size: 0.8em;
+}
 .center { text-align: center; }
+.footnote { 
+	font: 10px/16px Verdana, sans-serif;
+	color: #fff; 
+}
+.highlight { color: orange; }

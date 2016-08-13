@@ -4,7 +4,7 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 	Author: Vanja Maria Anderson
 	Date: 2016-05-30
-	Version: 1.1
+	Version: 1.2.1
 	Website: http://vanjaswebb.se
 	Development: https://github.com/vanjaanderson/grepViewer
 ********************************************************************************** 
@@ -29,17 +29,20 @@
     <body>
         <section id="wrapper">
             <header>
-                <h1>Viewer for InDesign GREPS</h1>
-                <?php if (!isset($_COOKIE['path'])) {
-                    echo '<form action="'.$_SERVER['PHP_SELF'].'" method="POST">
-                        <label for="path">Location of your GREP directory: </label>
-                        <input type="text" name="path" id="path" value="GREPAR" />
-                        <input type="submit" value="Set location" />
-                    </form>
-                    <form action="'.$_SERVER['PHP_SELF'].' "method="POST">
-                        <input type="hidden" name="delete_path">
-                        <input type="submit" value="Delete location">
-                    </form>';
-                } ?>
+                <h1>Viewer for InDesign GREPS <span class="small"><?=VERSION_NUMBER;?></span></h1>
+                <div id="form-group">
+                    <?php if (!isset($_COOKIE['path'])) {
+                        echo '<form action="'.$_SERVER['PHP_SELF'].'" method="POST">
+                            <label for="path">Location of your GREP directory: </label>
+                            <input type="text" name="path" id="path" placeholder="Write path here&ast;" />
+                            <input type="submit" value="Set location" />
+                        </form>';
+                    } 
+                    echo '<form action="'.$_SERVER['PHP_SELF'].' "method="POST">
+                            <input type="hidden" name="delete_path">
+                            <input type="submit" value="Delete location">
+                        </form>';
+                    ?>
+                </div>
             </header>
             <article id="main">

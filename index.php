@@ -1,7 +1,10 @@
 <?php
 
 // output buffering
-// ob_start();
+ob_start();
+
+// Define version number
+define('VERSION_NUMBER', 'v.1.2.1');
 
 include('inc/functions.php');
 
